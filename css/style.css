@@ -90,25 +90,27 @@ h3 {
   }
 }
 
-/* Utility Clases */
-
+/* Utility Classes */
 .nowrap {
   white-space: nowrap;
 }
 
 /* Header */
+header {
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 4;
+  background: white;
+  box-shadow: 0 3px 5px #00000024;
+}
+
 
 header nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   position: relative;
-}
-
-@media (max-width: 767px) {
-  header nav {
-    justify-content: space-between;
-  }
 }
 
 .bars-icon {
@@ -165,7 +167,7 @@ header nav ul li a {
     position: absolute;
     top: 80px;
     width: 100%;
-    z-index: 1;
+    z-index: 2;
     background-color: var(--light-color);
     padding: 8px;
     border-bottom-left-radius: 6px;
@@ -219,7 +221,7 @@ header nav .pages__ul {
   padding: 8px;
   text-align: center;
   min-height: 150px;
-  z-index: 1;
+  z-index: 2;
   transition: var(--main-transition);
 }
 
@@ -241,7 +243,6 @@ header nav .pages__li:hover .pages__ul {
 }
 
 /* Landing Section */
-
 main .arrow-up {
   position: fixed;
   right: 15px;
@@ -270,16 +271,24 @@ main .landing-section {
   background-position: center;
   display: flex;
   align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+main .landing-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
 }
 
 @media (max-width: 767px) {
   main .landing-section {
     background-position: right;
   }
-}
-
-main .landing-section .container {
-  margin-left: 0;
 }
 
 main .landing-section .content {
@@ -339,7 +348,6 @@ main .landing-section .content button:last-of-type:hover {
 }
 
 /* School Facilities Section */
-
 .facilities-section {
   margin: 100px 0;
   scroll-margin-top: 100px;
@@ -364,21 +372,18 @@ main .landing-section .content button:last-of-type:hover {
 .facilities-section .content .box-container {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  gap: 12px;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 767px) {
   .facilities-section .content .box-container {
-    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
   }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-  .facilities-section .content .box-container {
-    flex-wrap: wrap;
-  }
-}
+
 
 .facilities-section .content .box-container .box {
   display: flex;
@@ -758,7 +763,7 @@ main .landing-section .content button:last-of-type:hover {
 
 .school-classes .content .box:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 5px black;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
 }
 
@@ -1469,14 +1474,13 @@ footer .rights ul li a:hover {
   position: fixed;
   left: 0;
   top: 0;
-  height: 5px;
+  height: 3px;
   width: 0;
   background-color: #1877f2;
   z-index: 5;
 }
 
 /* Animations */
-
 @keyframes moving {
   50% {
     transform: translateX(3px);
