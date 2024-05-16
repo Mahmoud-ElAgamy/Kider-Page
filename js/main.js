@@ -17,6 +17,7 @@ addEventListener("scroll", () => {
 });
 
 const elements = document.querySelectorAll(".additional");
+
 for (let i = 0; i <= elements.length; i++) {
   elements[i].onblur = function () {
     if (elements[i].value !== "") {
@@ -26,3 +27,4 @@ for (let i = 0; i <= elements.length; i++) {
     }
   };
 }
+

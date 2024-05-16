@@ -95,6 +95,10 @@ h3 {
   white-space: nowrap;
 }
 
+.d-block {
+  display: block;
+}
+
 /* Header */
 header {
   position: sticky;
@@ -102,7 +106,7 @@ header {
   top: 0;
   z-index: 4;
   background: white;
-  box-shadow: 0 3px 5px #00000024;
+  box-shadow: 0 0 10px #ddd;
 }
 
 
@@ -142,7 +146,7 @@ header nav .nav__ul {
   display: flex;
   align-items: center;
   gap: 32px;
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 header nav ul li,
@@ -210,11 +214,17 @@ header nav .join-us-link a {
 
 .pages__li {
   position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 header nav .pages__ul {
+  visibility: hidden;
   opacity: 0;
   position: absolute;
+  transform: translateY(-20px);
   width: 200px;
   background-color: var(--light-color);
   border-radius: 6px;
@@ -223,6 +233,8 @@ header nav .pages__ul {
   min-height: 150px;
   z-index: 2;
   transition: var(--main-transition);
+  left: -50%;
+  top: 48px;
 }
 
 header nav .pages__li .pages__ul li {
@@ -240,6 +252,8 @@ header nav .pages__li .pages__ul li a:hover {
 
 header nav .pages__li:hover .pages__ul {
   opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 /* Landing Section */
@@ -249,7 +263,7 @@ main .arrow-up {
   bottom: -50px;
   width: 35px;
   height: 35px;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--light-color);
   background-color: var(--primary-color);
   border-radius: 4px;
@@ -305,7 +319,7 @@ main .landing-section .content {
 }
 
 main .landing-section .txt {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 main .landing-section .content h1 {
@@ -326,7 +340,7 @@ main .landing-section .content button {
   border-radius: 6px;
   color: var(--light-color);
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1rem;
   transition: var(--main-transition);
 }
 
@@ -763,7 +777,7 @@ main .landing-section .content button:last-of-type:hover {
 
 .school-classes .content .box:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
 }
 
@@ -806,7 +820,7 @@ main .landing-section .content button:last-of-type:hover {
 
 .school-classes .content .box .founder-info .founder-name span:last-of-type {
   color: gray;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .school-classes .content .box .founder-info .price {
@@ -847,7 +861,7 @@ main .landing-section .content button:last-of-type:hover {
 
 .school-classes .content .box .info .age span:last-of-type {
   color: gray;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .school-classes .content .box .info .time {
@@ -861,7 +875,7 @@ main .landing-section .content button:last-of-type:hover {
 
 .school-classes .content .box .info .time span:last-of-type {
   color: gray;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .school-classes .content .box .info .cap {
@@ -875,7 +889,7 @@ main .landing-section .content button:last-of-type:hover {
 
 .school-classes .content .box .info .cap span:last-of-type {
   color: gray;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 /* Appoinment Section */
@@ -955,7 +969,7 @@ main .landing-section .content button:last-of-type:hover {
 
 .appoinment .input label {
   color: gray;
-  font-size: 14px;
+  font-size: 0.875rem;
   position: absolute;
   top: 3px;
   left: 0;
@@ -1061,12 +1075,12 @@ main .landing-section .content button:last-of-type:hover {
 
 .pop-teachers .content .teacher .info-links .info span:last-of-type {
   color: gray;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .pop-teachers .content .teacher .info-links .links {
   color: var(--primary-color);
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .pop-teachers .content .teacher .info-links .links i {
@@ -1160,7 +1174,7 @@ main .landing-section .content button:last-of-type:hover {
 
 .clients-opion .content .opion .info p {
   color: gray;
-  font-size: 18px;
+  font-size: 1.125rem;
   margin-bottom: 10px;
 }
 
@@ -1329,7 +1343,7 @@ footer .cols-container .col:nth-of-type(2) ul li:hover i {
 footer .cols-container .col:nth-of-type(2) ul li i {
   color: darkgray;
   opacity: 0.8;
-  font-size: 12px;
+  font-size: 0.75rem;
   padding-right: 5px;
   cursor: pointer;
   transition: var(--main-transition);
